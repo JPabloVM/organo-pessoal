@@ -30,7 +30,7 @@ const Form = (props) => {
             <form onSubmit={onSend}>
                 <Title>Cadastre seus personagens do RPG</Title>
 
-                <TextField type='text' text='Nome' placeholder='Digite name do personagem' required={true} value={name} onChange={valor => setName(valor)} />
+                <TextField type='text' text='Nome' placeholder='Digite o nome do personagem' required={true} value={name} onChange={valor => setName(valor)} />
 
                 <DropdownList text='Categoria' required={true} value={category} itens={props.categories} onChange={valor => setCategory(valor)} />
 

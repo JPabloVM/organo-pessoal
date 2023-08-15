@@ -2,6 +2,7 @@ import Banner from "./components/Banner";
 import Form from "./components/Form";
 import Category from "./components/Category";
 import { useState } from "react";
+import FooterPage from "./components/FooterPage";
 
 function App() {
   const categories = [
@@ -47,14 +48,15 @@ function App() {
   }
   return (
     <div className="App">
-      <header>
-        <Banner />
+      <Banner />
 
-        <Form categories={categories.map(category => category.name)} onRegistering={character => onNewCharacterRegistering(character)} />
+      <Form categories={categories.map(category => category.name)} onRegistering={character => onNewCharacterRegistering(character)} />
 
-        {categories.map(category => <Category key={category.name} name={category.name} colorPrimary={category.colorPrimary} colorSecondary={category.colorSecondary} characters={characters.filter(character => character.category === category.name)} />)}
-      </header>
+      {categories.map(category => <Category key={category.name} name={category.name} colorPrimary={category.colorPrimary} colorSecondary={category.colorSecondary} characters={characters.filter(character => character.category === category.name)} />)}
+      
+      <FooterPage />
     </div>
+
   );
 }
 
